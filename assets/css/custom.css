@@ -1,0 +1,30 @@
+body {
+    background-color: #112e51;
+}
+.body-wrapper {
+    max-width: 1170px;
+    margin: 0 auto;
+    background-color: #fff;
+}
+.DH-banner {
+	background-image: url(../images/democracy-how-1170x200.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center center;
+	width: 100%;
+	position: relative;
+}
+.DH-banner:before {
+	content: '';
+	display: block;
+	padding-top: 17%;
+}
+/* .usa-navbar, */
+.usa-nav-secondary,
+.usa-hero {
+	display: none;
+}
+/* 
+	background-image: url(../images/democracy-how-1170x200.jpg)
+}
+ */
