@@ -12,7 +12,7 @@
     return del.sync('www'); 
   }
 	function copy() {
-    return gulp.src(['assets/**/*','./node_modules/uswds/dist/**/*']).pipe(gulp.dest('www')); 
+    return gulp.src(['assets/**/*','./node_modules/uswds/dist/**/*','./node_modules/bootstrap/dist/**/*']).pipe(gulp.dest('www')); 
   }
   function watch() {
     gulp.watch('assets/**/*', ['copy']);
