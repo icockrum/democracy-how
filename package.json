@@ -26,6 +26,7 @@
     "uswds": "^0.14.0"
   },
   "devDependencies": {
+    "bootstrap": "^3.3.7",
     "del": "^2.2.2",
     "gulp": "^3.9.0",
     "gulp-callback": "0.0.3",
