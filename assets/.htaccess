@@ -1,0 +1,24 @@
+# Redirect all requests that have empty querystring (don't put a ? in the redirect)
+RewriteCond %{HTTP_HOST} ^oldsite\.com$ [NC]
+RewriteCond %{QUERY_STRING} ^$
+RewriteRule ^(.*)$ http://newsite.com/$1#hashtag [NE,L,R=301]
+
+# Redirect all requests that have a querystring
+RewriteCond %{HTTP_HOST} ^oldsite\.com$ [NC]
+RewriteCond %{QUERY_STRING} ^(.*)$
+RewriteRule ^(.*)$ http://newsite.com/$1?%1#hashtag [NE,L,R=301]
+
+
+
+<IfModule mod_rewrite.c>
+RewriteEngine on
+RewriteCond %{HTTP_HOST} ^oldsite\.com$ [NC]
+RewriteRule ^(.*)$ http://newsite.com/$1#hashtag [NE,L,R=301]
+
+
+Options +FollowSymLinks
+RewriteEngine on
+RewriteCond %{HTTP_HOST} !^www\.newdomain\.com
+RewriteRule (.*) http://www.newdomain.com/$1/#hashtag [R=301,L]
+
+#RewriteRule ^(?i:redirectme)$ http://example.com/common/#from-redirectme [NE,R=301,L]
