@@ -75,9 +75,8 @@
         <article>
         
 <!--- content goes here -->
-<p>fubar</p
-<p>fubar</p
-<p>fubar</p
+<h2>Welcome</h2>
+<p>Welcome</p>
 					</article>
         </div>
       </div>
@@ -114,11 +113,19 @@
 					})
 						.done(function( data ) {
 							if ( console && console.log ) {
-								console.log( "Sample of data:", data.slice( 0, 100 ) );
-								$('article').html(data);
-								$('.nav li').removeClass('active');
-								$('a.'+location.hash.slice(1)).parent().addClass('active');
+								//console.log( "Sample of data:", data.slice( 0, 100 ) );
 							}
+							//$('article').fadeOut(500);
+							$('article').animate({opacity: 0, marginTop: '150px' }, 500);
+							setTimeout(function(){
+								$('article').html(data)
+								$('article').css({opacity: 0, marginLeft: '0px', marginTop: '-30px' })
+														.animate({opacity: 1, marginTop: '0px' }, 500);
+									//.fadeIn();
+							},550);
+							//$('article').html(data);
+							$('.nav li').removeClass('active');
+							$('a.'+location.hash.slice(1)).parent().addClass('active');
 						})  .fail(function() {
    						console.log( "No page found." );
   					});
